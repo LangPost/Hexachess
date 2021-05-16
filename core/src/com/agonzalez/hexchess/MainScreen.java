@@ -31,7 +31,7 @@ public class MainScreen implements Screen {
     public MainScreen(){
         atlas = new TextureAtlas("images/uiskin.atlas");
         skin = new Skin(Gdx.files.internal("images/uiskin.json"), atlas);
-        img = new Texture("images/icon.png");
+        img = new Texture("images/Icon.png");
 
         batch = new SpriteBatch();
         camera = new OrthographicCamera();
