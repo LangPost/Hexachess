@@ -26,12 +26,10 @@ public class MainScreen implements Screen {
     private OrthographicCamera camera;
     private TextureAtlas atlas;
     protected Skin skin;
-    private Texture img;
 
     public MainScreen(){
         atlas = new TextureAtlas("images/uiskin.atlas");
         skin = new Skin(Gdx.files.internal("images/uiskin.json"), atlas);
-        img = new Texture("images/icon.png");
 
         batch = new SpriteBatch();
         camera = new OrthographicCamera();
@@ -53,7 +51,7 @@ public class MainScreen implements Screen {
         mainTable.setFillParent(true);
         mainTable.top();
 
-        Image prueba = new Image(new Texture(Gdx.files.internal("images/Icon.png")));
+        Image Icono = new Image(new Texture(Gdx.files.internal("images/Icon.png")));
 
         TextButton playButton = new TextButton("Play", skin, "blue");
         TextButton tutorialButton = new TextButton("Tutorial", skin, "blue");
@@ -94,7 +92,7 @@ public class MainScreen implements Screen {
         });
 
         //Layout
-        mainTable.add(prueba).height(70).width(70);
+        mainTable.add(Icono).height(70).width(70);
         mainTable.row();
         mainTable.add(playButton);
         mainTable.row();
