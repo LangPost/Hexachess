@@ -21,15 +21,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MainScreen implements Screen {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-
-=======
     private Window aboutScreen;
->>>>>>> Stashed changes
-=======
-    private Window pause;
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
     private SpriteBatch batch;
     protected Stage stage;
     private Viewport viewport;
@@ -77,15 +69,7 @@ public class MainScreen implements Screen {
         tutorialButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-                ((Game)Gdx.app.getApplicationListener()).setScreen(new GameScreen());
-=======
                 //
->>>>>>> Stashed changes
-=======
-                //((Game)Gdx.app.getApplicationListener()).setScreen(new TutorialScreen());
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
             }
         });
 
@@ -101,15 +85,7 @@ public class MainScreen implements Screen {
         aboutButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-                //Añadir codigo
-=======
                 aboutScreen.setVisible(true);
->>>>>>> Stashed changes
-=======
-                pause.setVisible(true);
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
             }
         });
 
@@ -134,23 +110,12 @@ public class MainScreen implements Screen {
         mainTable.add(aboutButton);
         mainTable.row();
         mainTable.add(exitButton);
-<<<<<<< HEAD
-
-<<<<<<< Updated upstream
-        //Add table to stage
-        stage.addActor(mainTable);
-=======
-=======
         stage.addActor(mainTable);
 
-
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
-        //About pop-up
         TextButton closePopUp = new TextButton("Close", skin);
         closePopUp.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-<<<<<<< HEAD
                 aboutScreen.setVisible(false);
             }
         });
@@ -167,25 +132,6 @@ public class MainScreen implements Screen {
         aboutScreen.setBounds(camera.viewportWidth / 4, camera.viewportWidth / 4, 100 , 100 );
         stage.addActor(aboutScreen);
         //End about-pop
->>>>>>> Stashed changes
-=======
-                pause.setVisible(false);
-            }
-        });
-
-        pause = new Window("About", skin);
-        pause.row();
-        pause.add("V 0.1");
-        pause.row();
-        pause.add(closePopUp);
-        pause.row();
-        pause.pack();
-        pause.setMovable(false);
-        pause.setVisible(false);
-        pause.setBounds(camera.viewportWidth / 4, camera.viewportWidth / 4, 100 , 100 );
-        stage.addActor(pause);
-        //End about-pop
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
     }
 
     @Override
