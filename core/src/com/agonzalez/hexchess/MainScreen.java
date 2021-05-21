@@ -19,7 +19,11 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class MainScreen implements Screen {
+<<<<<<< Updated upstream
 
+=======
+    private Window aboutScreen;
+>>>>>>> Stashed changes
     private SpriteBatch batch;
     protected Stage stage;
     private Viewport viewport;
@@ -71,7 +75,11 @@ public class MainScreen implements Screen {
         tutorialButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
+<<<<<<< Updated upstream
                 ((Game)Gdx.app.getApplicationListener()).setScreen(new GameScreen());
+=======
+                //
+>>>>>>> Stashed changes
             }
         });
         optionsButton.addListener(new ClickListener(){
@@ -83,7 +91,11 @@ public class MainScreen implements Screen {
         aboutButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
+<<<<<<< Updated upstream
                 //Añadir codigo
+=======
+                aboutScreen.setVisible(true);
+>>>>>>> Stashed changes
             }
         });
         exitButton.addListener(new ClickListener(){
@@ -106,8 +118,32 @@ public class MainScreen implements Screen {
         mainTable.row();
         mainTable.add(exitButton);
 
+<<<<<<< Updated upstream
         //Add table to stage
         stage.addActor(mainTable);
+=======
+        //About pop-up
+        TextButton closePopUp = new TextButton("Close", skin);
+        closePopUp.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                aboutScreen.setVisible(false);
+            }
+        });
+
+        aboutScreen = new Window("About", skin);
+        aboutScreen.row();
+        aboutScreen.add("V 0.1");
+        aboutScreen.row();
+        aboutScreen.add(closePopUp);
+        aboutScreen.row();
+        aboutScreen.pack();
+        aboutScreen.setMovable(false);
+        aboutScreen.setVisible(false);
+        aboutScreen.setBounds(camera.viewportWidth / 4, camera.viewportWidth / 4, 100 , 100 );
+        stage.addActor(aboutScreen);
+        //End about-pop
+>>>>>>> Stashed changes
     }
 
     @Override
