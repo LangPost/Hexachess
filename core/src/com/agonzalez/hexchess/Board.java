@@ -99,14 +99,14 @@ public class Board {
         //Recibe el nombre de la pieza
         String name = info.GetTokenName();
 
-        int h = 60;
-        int w = 60;
+        int h = 100;
+        int w = 100;
 
         int X = col * squareSize + squareSize / 2 - h / 2;
         int Y = row * squareSize + squareSize / 2 - w / 2;
 
 
-        batch.draw(tokenAtlas.findRegion(name), X , Y);
+        batch.draw(tokenAtlas.findRegion(name), X , Y, h, w);
     }
 
 
@@ -142,7 +142,7 @@ public class Board {
     }
 
     public boolean IsInBounds(IntPoint2D location){
-        return location.getX()<8&&location.getX()>=0&&location.getY()<8&&location.getY()>=0;
+        return location.getX() < 8 && location.getX() >= 0 && location.getY() < 8 && location.getY() >= 0;
     }
 
 }
