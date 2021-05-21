@@ -4,8 +4,11 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+<<<<<<< HEAD
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+=======
+>>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
@@ -17,17 +20,23 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+<<<<<<< HEAD
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+=======
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
+>>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
 
 public class OptionScreen implements Screen{
     private Stage stage;
     private AppPreferences Preferences;
     private TextureAtlas atlas;
     protected Skin skin;
+<<<<<<< HEAD
     private SpriteBatch batch;
     private Viewport viewport;
     private OrthographicCamera camera;
@@ -45,6 +54,12 @@ public class OptionScreen implements Screen{
         camera.update();
 
         stage = new Stage(viewport, batch);
+=======
+
+    public OptionScreen(AppPreferences preferences){
+        Preferences = preferences;
+        stage = new Stage(new ScreenViewport());
+>>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
     }
 
     @Override
@@ -154,8 +169,13 @@ public class OptionScreen implements Screen{
         table.add(multiplayerOnOffLabel);
         table.add(multiplaterCheckbox);
         table.row().padRight(1);
+<<<<<<< HEAD
         table.add(backButton).width(200).center();
         table.add(acceptButton).width(200).center();
+=======
+        table.add(backButton).width(Gdx.graphics.getWidth()/4).center();
+        table.add(acceptButton).width(Gdx.graphics.getWidth()/4).center();
+>>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
         table.row();
 
     }
@@ -165,7 +185,11 @@ public class OptionScreen implements Screen{
         Gdx.gl.glClearColor(0f, 0f, 0f, 0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+<<<<<<< HEAD
         stage.act();
+=======
+        stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f));
+>>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
         stage.draw();
     }
 

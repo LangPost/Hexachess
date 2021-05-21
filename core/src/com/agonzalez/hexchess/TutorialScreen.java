@@ -13,32 +13,21 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
-public class MainScreen implements Screen {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+public class TutorialScreen implements Screen {
 
-=======
-    private Window aboutScreen;
->>>>>>> Stashed changes
-=======
-    private Window pause;
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
     private SpriteBatch batch;
     protected Stage stage;
     private Viewport viewport;
     private OrthographicCamera camera;
     private TextureAtlas atlas;
     protected Skin skin;
-    public AppPreferences Preferences = new AppPreferences();
 
-    public MainScreen(){
+    public TutorialScreen(){
         atlas = new TextureAtlas("images/uiskin.atlas");
         skin = new Skin(Gdx.files.internal("images/uiskin.json"), atlas);
 
@@ -51,6 +40,7 @@ public class MainScreen implements Screen {
         camera.update();
 
         stage = new Stage(viewport, batch);
+        Gdx.input.setInputProcessor(stage);
     }
 
 
@@ -64,63 +54,43 @@ public class MainScreen implements Screen {
 
         Image Icono = new Image(new Texture(Gdx.files.internal("images/Icon.png")));
 
-        //ClickListeners
         TextButton playButton = new TextButton("Play", skin, "blue");
+        TextButton tutorialButton = new TextButton("Tutorial", skin, "blue");
+        TextButton optionsButton = new TextButton("Options", skin);
+        TextButton aboutButton = new TextButton("About", skin, "toggle");
+        TextButton exitButton = new TextButton("Exit", skin);
+
+        //ClickListeners
         playButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 ((Game)Gdx.app.getApplicationListener()).setScreen(new GameScreen());
             }
         });
-
-        TextButton tutorialButton = new TextButton("Tutorial", skin, "blue");
         tutorialButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
                 ((Game)Gdx.app.getApplicationListener()).setScreen(new GameScreen());
-=======
-                //
->>>>>>> Stashed changes
-=======
-                //((Game)Gdx.app.getApplicationListener()).setScreen(new TutorialScreen());
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
             }
         });
-
-        TextButton optionsButton = new TextButton("Options", skin);
         optionsButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((Game)Gdx.app.getApplicationListener()).setScreen(new OptionScreen(Preferences));
+                //Añadir codigo
             }
         });
-
-        TextButton aboutButton = new TextButton("About", skin, "toggle");
         aboutButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
                 //Añadir codigo
-=======
-                aboutScreen.setVisible(true);
->>>>>>> Stashed changes
-=======
-                pause.setVisible(true);
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
             }
         });
-
-        TextButton exitButton = new TextButton("Exit", skin);
         exitButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.app.exit();
             }
         });
-
 
         //Layout
         mainTable.add(Icono).height(70).width(70);
@@ -134,58 +104,9 @@ public class MainScreen implements Screen {
         mainTable.add(aboutButton);
         mainTable.row();
         mainTable.add(exitButton);
-<<<<<<< HEAD
 
-<<<<<<< Updated upstream
         //Add table to stage
         stage.addActor(mainTable);
-=======
-=======
-        stage.addActor(mainTable);
-
-
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
-        //About pop-up
-        TextButton closePopUp = new TextButton("Close", skin);
-        closePopUp.addListener(new ClickListener(){
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-<<<<<<< HEAD
-                aboutScreen.setVisible(false);
-            }
-        });
-
-        aboutScreen = new Window("About", skin);
-        aboutScreen.row();
-        aboutScreen.add("V 0.1");
-        aboutScreen.row();
-        aboutScreen.add(closePopUp);
-        aboutScreen.row();
-        aboutScreen.pack();
-        aboutScreen.setMovable(false);
-        aboutScreen.setVisible(false);
-        aboutScreen.setBounds(camera.viewportWidth / 4, camera.viewportWidth / 4, 100 , 100 );
-        stage.addActor(aboutScreen);
-        //End about-pop
->>>>>>> Stashed changes
-=======
-                pause.setVisible(false);
-            }
-        });
-
-        pause = new Window("About", skin);
-        pause.row();
-        pause.add("V 0.1");
-        pause.row();
-        pause.add(closePopUp);
-        pause.row();
-        pause.pack();
-        pause.setMovable(false);
-        pause.setVisible(false);
-        pause.setBounds(camera.viewportWidth / 4, camera.viewportWidth / 4, 100 , 100 );
-        stage.addActor(pause);
-        //End about-pop
->>>>>>> 315b3dc5f6cbefb0aa87a0c2e6c399b349aeb4c4
     }
 
     @Override
